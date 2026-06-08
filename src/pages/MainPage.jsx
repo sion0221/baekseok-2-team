@@ -1,8 +1,7 @@
 import { COLOR } from "../constants/theme";
-import NavBar from "../components/NavBar";
 import { ChevronRight } from "lucide-react";
 
-export default function MainPage({ user, onTraining, onHome }) {
+export default function MainPage({ user, onTraining }) {
   return (
     <div
       style={{
@@ -24,7 +23,7 @@ export default function MainPage({ user, onTraining, onHome }) {
       >
         <div style={{ marginBottom: 24, paddingTop: 4 }}>
           <div style={{ fontSize: 25, fontWeight: 800, marginBottom: 4 }}>
-            안녕하세요, {user.name}님 ({user.age})
+            안녕하세요, {user.name}님 ({user.age} / {user.gender})
           </div>
           <div style={{ fontSize: 20, color: COLOR.textMid }}>
             오늘의 인지훈련을 시작하세요
@@ -75,8 +74,6 @@ export default function MainPage({ user, onTraining, onHome }) {
           </div>
         </button>
       </div>
-
-      <NavBar onHome={onHome} />
     </div>
   );
 }

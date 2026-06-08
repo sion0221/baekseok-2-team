@@ -50,7 +50,11 @@ export default function QuizSection1({ onNext, onHome }) {
             }}
           >
             <div
-              style={{ fontSize: 13, color: COLOR.textMid, marginBottom: 8 }}
+              style={{
+                fontSize: 13,
+                color: COLOR.textMid,
+                marginBottom: 8,
+              }}
             >
               문제 1
             </div>

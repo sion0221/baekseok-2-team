@@ -23,12 +23,8 @@ export default function App() {
       )}
 
       {/* 메인 홈 대시보드 */}
-      {page === "main" && user && (
-        <MainPage
-          user={user}
-          onTraining={() => setPage("training")}
-          onHome={goHome}
-        />
+      {page === "main" && (
+        <MainPage user={user} onTraining={() => setPage("training")} />
       )}
 
       {/* 인지 훈련 퀴즈 및 결과 화면 */}
