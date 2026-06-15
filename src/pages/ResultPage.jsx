@@ -6,7 +6,6 @@ import { SECTION2_QUESTION, SECTION3_QUESTION } from "../data/quizData";
 export default function ResultPage({ s1Answers, s2Answer, s3Answer, onHome }) {
   const now = new Date();
 
-  // 12시간제와 24시간제 입력을 모두 처리하기 위해 시간 계산
   const hours24 = now.getHours();
   const hours12 = hours24 % 12 === 0 ? 12 : hours24 % 12;
 
@@ -17,12 +16,7 @@ export default function ResultPage({ s1Answers, s2Answer, s3Answer, onHome }) {
 
   let s1CorrectCount = 0;
 
-  // 문제갯수의 수 만큼 i를 0부터 2까지 반복
   for (let i = 0; i < 3; i++) {
-    // 사용자가 실수로 공백이나 불필요한 글자로 인해 시스템 오류가 생기지 않도록 데이터를 정제
-    // 앞뒤 공백 제거, 숫자가 아닌 모든 텍스트 제거 후 순수 숫자만 추출
-    // s1Answers[i]에서 값이 잘 입력되어 있으면 앞의 값을, 잘못 입력됐다면 뒤에 있는 값으로 처리
-    // 잘 처리된 값은 그 뒤에 있는 trim()과 replace() 함수를 실행
     const userAnswer = (s1Answers[i] || "").trim().replace(/[^0-9]/g, "");
 
     if (i === 0 && userAnswer === year) s1CorrectCount++;
